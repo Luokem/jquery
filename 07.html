@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07 案例 </title>
+  <style>
+    div  {
+      color: white;
+      width: 220px;
+      background: rgb(166, 34, 34);
+    }
+     ul {
+       list-style: none;
+       margin: 0;
+       padding: 0;
+     }
+
+    .list ul  li {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px dotted red;
+        position: relative;
+        padding:0  10px;
+     }
+
+     a {
+       color: white;
+       text-decoration: none;
+     }
+
+     li:last-child {
+       border-bottom: none;
+     }
+
+     span {
+       position: absolute;
+       right: 10px;
+       top: 0;
+     }
+
+    .list .sub {
+      width: 180px;
+      background: white;
+      position: absolute;
+      right: -182px;
+      top: 0;
+      margin-left: 10px;
+      border: 1px solid #eee;
+      display: none;
+    }
+
+    .list .sub li {
+      border: none;
+      height: 35px;
+      line-height: 35px;
+    }
+
+    .list .sub li a{
+      color: black;
+      font-size: 13px;
+    }
+
+      .list .sub li a:last-child  {
+        margin-left: 80px;
+      }
+  </style>
+</head>
+<body>
+  <div class="list">
+    <ul>
+      <li class="l"><a href="#">珠宝玉器</a><span>></span>
+        <ul class="sub">
+          <li><a href="#">和田</a><a  href="#">玉石</a></li>
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+        </ul>
+      </li>
+      <li class="l"><a href="#">珠宝玉器</a><span>></span>
+        <ul class="sub">
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+        </ul>
+      </li>
+      <li class="l"><a href="#">珠宝玉器</a><span>></span>
+        <ul class="sub">
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+        </ul>
+      </li>
+      <li class='l'><a href="#">珠宝玉器</a><span>></span>
+        <ul class="sub">
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+        </ul>
+      </li>
+      <li class="l"><a href="#">珠宝玉器</a><span>></span>
+        <ul class="sub">
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田</a><a href="#">玉石</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+  <script>
+    $(".list .l").mouseover(function() {
+      $(this).find("ul").css('display', "block");
+    })
+    .mouseout(function() {
+      $(this).find("ul").css('display', "none")
+      .hover(function(){
+        $(this).find("ul").css('display', "block");
+      },function() {
+        $(this).find("ul").css('display', "none");
+      });
+    })
+  </script>
+</body>
+</html>

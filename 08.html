@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>08 </title>
+  <style>
+    div {
+      width: 250px;
+      height: 250px;
+      border: 1px solid #eee;
+      float: left;
+      margin: 10px;
+      text-align: center;
+    }
+    div  div {
+      width: 150px;
+      height: 150px;
+      border: 1px solid gray;
+    }
+    button {
+      display: block;
+      width: 60px;
+      height: 20px;
+    }
+    div:nth-child(1) div {
+      background: rgb(177, 233, 57);
+    }
+    div:nth-child(2) div {
+      background: white;
+    }
+    div:nth-child(3) div {
+      background: rgb(187, 137, 131);
+    }
+
+    div:nth-child(4) div {
+      display: none;
+      background: pink;
+    }
+    div:nth-child(5) div{
+      background: gray;
+    }
+    div:nth-child(6) div{
+      background: rgb(129, 168, 106);
+    }
+    div:nth-child(7) div {
+      display: none;
+      background: rgb(188, 124, 236);
+    }
+    div:nth-child(8) div {
+      background: rgb(222, 86, 245);
+    }
+    div:nth-child(9) div {
+      background: rgb(90, 10, 212);
+    }
+  </style>
+</head>
+<body>
+  <div><button class="one">点击</button><div></div>单击,一秒时间隐藏</div>
+  <div><button class="two">点击</button><div></div>4秒去展示出来 </div>
+  <div><button class="three">点击</button><div></div>切换</div>
+  <div><button class="four">点击</button><div></div>渐变，通过淡入的方式显示元素</div>
+  <div><button class="five">点击</button><div></div> 淡出方式隐藏元素</div>
+  <div><button class="six">点击</button><div></div>切换，展示的隐藏，隐藏的展示</div>
+  <div><button class="seven">点击</button><div></div>向下滑动</div>
+  <div><button class="eight">点击</button><div></div>向上滑动</div>
+  <div><button class="nine">点击</button><div></div>缓慢的隐藏匹配元素</div>
+  <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+  <script>
+  $( function(){
+    //单击,一秒时间隐藏
+    $(".one").click(function() {
+      $("div:nth-child(1) div").hide(1000);
+    })
+
+    // 4秒去展示出来
+    $(".two").click(function() {
+      $("div:nth-child(2) div").show(4000, function() {
+        $(this).css('background', "green");
+      });
+      });
+
+      //切换
+      $(".three").click(function() {
+        $("div:nth-child(3) div").toggle(1000, function() {
+          $(this).css("background","yellow");
+        });
+      });
+
+      //淡入
+      $(".four").click(function() {
+        $('div:nth-child(4) div').fadeIn(2000);
+      });
+
+      //淡出
+      $(".five").click(function() {
+        $('div:nth-child(5) div').fadeOut(2000);
+      });
+
+      //切换，隐藏,展示
+      $(".six").click(function() {
+        $('div:nth-child(6) div').fadeToggle(2000);
+      });
+
+
+
+      //向下滑动
+      $(".seven").click(function() {
+        $("div:nth-child(7) div").slideDown(1000);
+      });
+      //向上滑动
+      $(".eight").click(function() {
+        $("div:nth-child(8) div").slideUp(1000);
+      });
+      // 缓慢隐藏匹配的元素
+      $(".nine").click(function() {
+        $('div:nth-child(9) div').slideToggle(1000);
+      });
+
+    })
+  </script>
+</body>
+</html>
