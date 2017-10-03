@@ -63,29 +63,30 @@
       .list .sub li a:last-child  {
         margin-left: 80px;
       }
+
   </style>
 </head>
 <body>
   <div class="list">
     <ul>
-      <li class="l"><a href="#">珠宝玉器</a><span>></span>
+      <li class="l"><a href="#">珠宝玉器1</a><span>></span>
         <ul class="sub">
-          <li><a href="#">和田</a><a  href="#">玉石</a></li>
+          <li><a href="#">和田1</a><a  href="#">玉石</a></li>
           <li><a href="#">和田</a><a href="#">玉石</a></li>
           <li><a href="#">和田</a><a href="#">玉石</a></li>
           <li><a href="#">和田</a><a href="#">玉石</a></li>
           <li><a href="#">和田</a><a href="#">玉石</a></li>
         </ul>
       </li>
-      <li class="l"><a href="#">珠宝玉器</a><span>></span>
+      <li class="l"><a href="#">珠宝玉器2</a><span>></span>
         <ul class="sub">
-          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田2</a><a href="#">玉石</a></li>
           <li><a href="#">和田</a><a href="#">玉石</a></li>
         </ul>
       </li>
-      <li class="l"><a href="#">珠宝玉器</a><span>></span>
+      <li class="l"><a href="#">珠宝玉器3</a><span>></span>
         <ul class="sub">
-          <li><a href="#">和田</a><a href="#">玉石</a></li>
+          <li><a href="#">和田3</a><a href="#">玉石</a></li>
           <li><a href="#">和田</a><a href="#">玉石</a></li>
           <li><a href="#">和田</a><a href="#">玉石</a></li>
         </ul>
@@ -106,16 +107,12 @@
   </div>
   <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
   <script>
-    $(".list .l").mouseover(function() {
-      $(this).find("ul").css('display', "block");
-    })
-    .mouseout(function() {
-      $(this).find("ul").css('display', "none")
-      .hover(function(){
+    $(function() {
+      $(".list .l").hover(function() {
         $(this).find("ul").css('display', "block");
       },function() {
         $(this).find("ul").css('display', "none");
-      });
+      })
     })
   </script>
 </body>

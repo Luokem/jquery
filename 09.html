@@ -3,46 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <title>09 登录</title>
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .nav {
-      width: 100%;
-      height: 40px;
-      padding: 10px;
-      background: rgb(47, 47, 46);
-    }
-  .nav div {
-    float: right;
-    width: 70px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-  }
-  .nav .login{
-    background: rgb(101, 173, 47);
-    color: white;
-    margin-right: 30px;
-  }
-
-  .nav .register {
-    background:rgb(98, 98, 98);
-    color: gray;
-  }
-  </style>
+  <link rel="stylesheet" href="./09.css" />
 </head>
 <body>
-  <div class="nav">
-    <div class="login">登录</div>
-    <div class="register">注册</div>
+  <div class="nav" style="display: block; left: 0px">
+    <a class="login" href="#">登录</a>
+    <a class="register" href="#">注册</a>
+  </div>
+  <div class="loginmask"></div>
+  <div class="reg-view" style="display: none; left: 100%">
+    <button class="return">返回</button>
+    <div class="reg-other">
+      <p>你可以选择第三方账号直接登录代码笔记，一分钟完成注册</p>
+      <div class="qq-reg"><a href="http://www.qq.com">QQ账号注册</a></div>
+      <div class="weibo-reg"><a href="http://www.weibo.com">微博账号注册</a></div>
+    </div>
   </div>
 
+  <div class="login-view">
+    <div class="login-inf">
+      <div class="top"><span>会员登录</span><span>还没有账号 <a class="l-register"　href="＃">立即注册</a></span></div>
+      <p>邮箱登录</p>
+      <form action="#">
+        <input type="text" placeholder="邮箱/用户名" name="username"><br />
+        <input type="password" placeholder="密码" name="password">
+        <div>
+          <input type="submit" value="登录"></input>
+          <input type="checkbox" id="h-login" >
+          <label for="h-login"> 保持登录</label>
+          <span><a href="#">忘记密码?</a></span>
+        </div>
+      </form>
+    </div>
+
+    <div class="other-login">
+      <p>用第三方账号直接登录</p>
+      <div class="qq-log"><a href="http://www.qq.com">QQ账号注册</a></div>
+      <div class="weibo-log"><a href="http://www.weibo.com">微博账号注册</a></div>
+    </div>
+  </div>
   <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
   <script>
-    
+  // register
+    $(function() {
+    $(".register").click( function() {
+      $(".loginmask").css("visibility","hidden");
+      $(".login-view").css("visibility", "hidden");
+      $(".reg-view").css("display", "block");
+      $(".reg-view").animate({left:"0px"},'show',function() {
+      });
+      $('.nav').animate({left:"-100%"},'show', function() {
+        $(this).css("display", "none");
+      });
+    })
+
+    $(".return").click( function() {
+      $('.nav').css("display", "block").animate({left: "0px"},"slow");
+      $(".reg-view").animate({left: "100%"},"show", function() {
+        $(".reg-view").css("display", "none");
+        $(".loginmask").css("visibility","visible");
+        $(".login-view").css("visibility", "visible");
+      });
+    });
+
+    // login
+    $(".login").click(function() {
+      $(".loginmask").css("display", "block").animate({ opacity: "0.8"}, "show");
+        $(".login-view").css("display","block").animate({top: "0px"}, "show");
+    });
+
+    $('.loginmask').click(function() {
+      $(".loginmask").animate({opacity: "0"},"fast",function() {
+        $(this).css("display", "none");
+      });
+      $(".login-view").animate({top: "-500px"}, "fast", function(){
+        $(this).css("display", "none");
+      });
+    })
+  });
+
+
+
   </script>
 </body>
 </html>

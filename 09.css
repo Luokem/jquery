@@ -1,0 +1,201 @@
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  /*== nav ==*/
+  .nav {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    background: rgb(47, 47, 46);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+  }
+  a  {
+    text-decoration: none;
+    color: white;
+  }
+
+.nav a  {
+  display: inline-block;
+  float: right;
+  width: 70px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.nav .login{
+  background: rgb(101, 173, 47);
+  margin-right: 30px;
+}
+
+.nav .register {
+  background:rgb(98, 98, 98);
+  color: gray;
+}
+
+ /*== register view ==*/
+.reg-view {
+width: 100%;
+height: 100%;
+position: absolute;
+left: 100%;
+top: 0px;
+display: none;
+z-index: 999;
+}
+
+.return  {
+display: inline-block;
+margin-top: 20px;
+line-height: 50px;
+text-align: center;
+background: rgb(139, 137, 139);
+width: 100px;
+height: 50px;
+font-size: 22px;
+border: none;
+color: white;
+}
+
+.reg-other{
+width: 380px;
+margin: 200px auto;
+}
+.reg-other p {
+font-size: 14px;
+margin-bottom: 30px;
+}
+
+.weibo-reg, .qq-reg {
+width: 180px;
+height: 40px;
+line-height: 40px;
+text-align: center;
+}
+
+.weibo-reg {
+  background: rgb(252, 48, 38);
+  float: right;
+  margin-right: 20px;
+}
+.qq-reg {
+background-color: rgb(93, 192, 255);
+float: right;
+}
+/*== login view ==*/
+.loginmask {
+width: 100%;
+height: 100%;
+position: absolute;
+background: rgb(47, 47, 46);
+top: 0;
+left: 0;
+opacity: 0;
+z-index: 8;
+display: none;
+}
+.login-view {
+margin-top: 100px;
+width: 450px;
+height: 500px;
+background: white;
+margin: 0 auto;
+position: absolute;
+top: -500px;
+left: 50%;
+margin-left: -225px;
+z-index: 99;
+display: none;
+}
+.login-inf {
+padding: 60px 50px 30px 50px;
+border-bottom: 1px solid #979696;
+}
+.top span:first-child {
+font-size: 30px;
+}
+
+.top span:last-child {
+float: right;
+text-align: right;
+margin-top: 15px;
+font-size: 18px;
+color: rgb(158, 158, 162);
+}
+.top .l-register{
+color: rgb(207, 54, 44);
+cursor: pointer;
+}
+
+.login-inf p {
+font-size: 14px;
+}
+
+.login-inf input:nth-child(1),
+.login-inf input:nth-child(3){
+width: 100%;
+height: 40px;
+font-size: 14px;
+margin-bottom: 10px;
+padding-left: 10px;
+border: 1px solid #979696;
+}
+.login-inf input[value="登录"]  {
+background-color: rgb(62, 171, 103);
+color: white;
+font-size: 20px;
+border: none;
+width: 150px;
+height: 40px;
+line-height: 40px;
+text-align: center;
+margin-right: 10px;
+}
+
+.login-inf input[type="checkbox"] {
+  vertical-align: text-top;
+}
+
+.login-inf label {
+font-size: 14px;
+color: rgb(117, 117, 117);
+}
+
+.login-inf form span a{
+font-size: 14px;
+color: rgb(121, 121, 121);
+float: right;
+margin-top: 13px;
+}
+
+.other-login {
+padding: 18px 50px;
+}
+.other-login p {
+font-size: 13px;
+margin-bottom: 20px;
+color: rgb(120, 120, 120);
+}
+
+.other-login div {
+width: 165px;
+height: 40px;
+line-height: 40px;
+text-align: center;
+}
+
+.other-login a {
+font-size: 13px;
+}
+
+.other-login .weibo-log {
+background-color: rgb(208, 50, 50);
+}
+
+.other-login .qq-log {
+background: rgb(87, 200, 236);
+float: right;
+}
